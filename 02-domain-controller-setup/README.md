@@ -82,3 +82,17 @@ This screenshot shows the **Reverse Lookup Zone**, confirming **IP → hostname*
 - Configuring Forward and Reverse Lookup Zones
 - Reading and validating **A** and **PTR** records
 - Using Server Manager and DNS Manager for domain administration
+
+---
+
+## What's Next
+
+Now that the domain controller and DNS are configured, the next step is to organize the domain structure.
+
+In **Lab 3**, we will:
+
+- Create Organizational Units (OUs)
+- Set up a clean structure for users, computers, and groups
+- Prepare for future Group Policy and access control
+
+This creates a clear and maintainable foundation before we begin adding users, permissions, and policies.
