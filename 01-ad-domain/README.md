@@ -84,10 +84,9 @@ _Confirmation that the server is now operating as a Domain Controller._
 ---
 
 ### Next Lab
-**Lab 2: Join a Windows Client to the Domain**  
+**Lab 2: Domain Controller + DNS**
 
 We will:
-- Point the client DNS to the domain controller
-- Join the Windows 11 machine to **lab.local**
-- Sign in with a domain account
-- Verify trust and policy processing
+- Promote the server to a Domain Controller
+- Configure DNS forward and reverse lookup zones
+- Ensure the domain is ready for clients to join
