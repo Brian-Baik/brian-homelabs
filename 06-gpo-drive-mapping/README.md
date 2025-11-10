@@ -83,13 +83,32 @@ Helpdesk user was able to create and edit files in **H:** confirming correct per
 
 ## Screenshots
 
-Stored in: /06-gpo-drive-mapping/screenshots/
+**01 – Standard User (S: Drive Only)**  
+<img src="screenshots/01-client-bbaik-shared-drive.png" width="700px">
 
-| Filename                         | Description                                      |
-|----------------------------------|--------------------------------------------------|
-| `01-shared-drive-mapped.png`     | Standard user sees only **S:**                   |
-| `02-helpdesk-drive-mapped.png`   | Helpdesk user sees **S:** + **H:**               |
-| `03-helpdesk-modify-test-file.png` | Helpdesk user successfully modifies a file in **H:** |
+*File:* `01-client-bbaik-shared-drive.png`  
+Standard user (`LAB\bbaik`) sees only **S:** mapped to `\\DC-01\Shared`.
+
+---
+
+**02 – Helpdesk User (S: + H:)**  
+<img src="screenshots/02-client-helpdesk-drive-mapped.png" width="700px">
+
+*File:* `02-client-helpdesk-drive-mapped.png`  
+Helpdesk account (`LAB\helpdesk.bbaik`) receives **S:** and **H:**.
+
+---
+
+**03 – Helpdesk Modify Test**  
+<img src="screenshots/03-client-helpdesk-modify-file.png" width="700px">
+
+*File:* `03-client-helpdesk-modify-file.png`  
+Helpdesk account can create and modify files in **H:** confirming correct elevated access.
+
+---
+
+All images are stored in: /06-gpo-drive-mapping/screenshots/
+
 
 ---
 
