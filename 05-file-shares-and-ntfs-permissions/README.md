@@ -82,14 +82,44 @@ This confirms **least privilege** and **RBAC** are correctly implemented.
 
 ## Screenshots
 
-Stored in: /05-file-shares-and-ntfs/screenshots/
-```
-01-folder-structure.png
-02-share-permissions.png
-03-ntfs-permissions-helpdesk.png
-04-access-denied-bbaik.png
-05-access-allowed-helpdesk.png
-```
+### 01 – Shares Folder Structure
+`01-folder-structure.png`  
+Shows the `C:\Shares` directory containing `Public`, `Helpdesk`, and `HR`.
+
+![01-folder-structure](screenshots/01-folder-structure.png)
+
+---
+
+### 02 – Share Permissions (Public / Helpdesk Share Example)
+`02-share-permissions.png`  
+Share permissions configured via **Advanced Sharing**.
+
+![02-share-permissions](screenshots/02-share-permissions.png)
+
+---
+
+### 03 – NTFS Permissions (Helpdesk)
+`03-ntfs-permissions-helpdesk.png`  
+NTFS permissions on the `Helpdesk` folder showing the **Helpdesk** security group has the intended rights.
+
+![03-ntfs-permissions-helpdesk](screenshots/03-ntfs-permissions-helpdesk.png)
+
+---
+
+### 04 – Standard User Access Denied (bbaik)
+`04-access-denied-bbaik.png`  
+Standard user (`LAB\bbaik`) cannot modify files in the Helpdesk share.
+
+![04-access-denied-bbaik](screenshots/04-access-denied-bbaik.png)
+
+---
+
+### 05 – Helpdesk Account Access Allowed
+`05-access-allowed-helpdesk.png`  
+Helpdesk account (`LAB\helpdesk.bbaik`) can create / edit files in the Helpdesk share.
+
+![05-access-allowed-helpdesk](screenshots/05-access-allowed-helpdesk.png)
+
 ---
 
 ## Skills Demonstrated
