@@ -62,15 +62,34 @@ helpdesk.bbaik
 
 ---
 
-## Screenshots (to add)
+## Screenshots
 
-`01-users-in-ou.png`  
-Shows standard user accounts in CORP/Users
+![01-users-in-ou](./screenshots/01-users-in-ou.png)  
+Shows standard user accounts in CORP/Users.
 
-`02-helpdesk-account.png`  
-Shows helpdesk.bbaik in CORP/Service Accounts
+![02-helpdesk-account](./screenshots/02-helpdesk-account.png)  
+Shows helpdesk.bbaik located in CORP/Service Accounts.
 
-`03-helpdesk-group.png`  
-Shows helpdesk.bbaik as a member of the Helpdesk group
+![03-helpdesk-group](./screenshots/03-helpdesk-group.png)  
+Shows helpdesk.bbaik as a member of the Helpdesk group.
 
-Screenshots will be stored in the `screenshots` directory.
+Screenshots are stored in the `screenshots` directory.
+
+---
+
+## Verification
+
+The Helpdesk account was confirmed to be the only account with elevated permissions by checking membership of the Helpdesk security group.
+
+Standard user accounts do not have administrative rights and will be used later for workstation login and permission testing.
+
+This establishes a clear separation between regular identity and administrative identity. This separation is a common requirement in managed IT environments.
+
+---
+
+## Next Lab
+
+**Lab 5: File Share and NTFS Permissions**
+
+This will use the Helpdesk group to grant access to specific shared folders.  
+Standard user accounts will be used to verify that access is restricted based on group membership.
