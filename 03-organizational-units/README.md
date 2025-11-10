@@ -53,10 +53,16 @@ This lab prepares the environment for **user lifecycle management, least privile
 
 ## Screenshots
 
-| File | Description |
-|------|-------------|
-| `01-OU-Tree.png` | CORP OU structure expanded in ADUC. |
-| `02-OU-Properties.png` | Protection against accidental deletion enabled. |
+### 01-OU-Tree.png
+This screenshot shows the CORP OU structure inside Active Directory Users and Computers.
+
+![OU Tree](./screenshots/01-OU-Tree.png)
+
+### 02-OU-Properties.png
+This screenshot shows the Object tab with "Protect object from accidental deletion" enabled.
+
+![OU Properties](./screenshots/02-OU-Properties.png)
+
 
 Screenshots are located in the `screenshots/` folder.
 
