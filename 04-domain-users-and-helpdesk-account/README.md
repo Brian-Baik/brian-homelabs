@@ -30,8 +30,8 @@ All users follow the first initial plus last name pattern.
 | Jamie Chen | `jchen` | `jchen@lab.local` | `CORP/Users` |
 | Jordan Lee | `jlee` | `jlee@lab.local` | `CORP/Users` |
 | Michael Scott | `mscott` | `mscott@lab.local` | `CORP/Users` |
-| Brian (Standard Account) | `bbaik` | `bbaik@lab.local` | `CORP/Users` |
-| Brian (Helpdesk Account) | `helpdesk.bbaik` | `helpdesk.bbaik@lab.local` | `CORP/Service Accounts` |
+| Brian Baik (Standard Account) | `bbaik` | `bbaik@lab.local` | `CORP/Users` |
+| Brian Baik (Helpdesk Account) | `helpdesk.bbaik` | `helpdesk.bbaik@lab.local` | `CORP/Service Accounts` |
 
 The Helpdesk account is the only account with elevated rights.  
 It was added to the Helpdesk security group located in: CORP/Groups/Helpdesk
