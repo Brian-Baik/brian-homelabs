@@ -71,10 +71,10 @@ C:\Shares\HR
 
 | Account | Path | Expected | Result |
 |--------|------|----------|--------|
-| `LAB\bbaik` | `\\DC-01\Shared`   | Can read only | Confirmed ✅ |
-| `LAB\bbaik` | `\\DC-01\Helpdesk` | Cannot modify | Confirmed ✅ |
-| `LAB\helpdesk.bbaik` | `\\DC-01\Helpdesk` | Modify/create files allowed | Confirmed ✅ |
-| `LAB\bbaik` | `\\DC-01\HR` | No edit capability | Confirmed ✅ |
+| `LAB\bbaik` | `\\DC-01\Shared`   | Can read only | Confirmed |
+| `LAB\bbaik` | `\\DC-01\Helpdesk` | Cannot modify | Confirmed |
+| `LAB\helpdesk.bbaik` | `\\DC-01\Helpdesk` | Modify/create files allowed | Confirmed |
+| `LAB\bbaik` | `\\DC-01\HR` | No edit capability | Confirmed |
 
 This confirms **least privilege** and **RBAC** are correctly implemented.
 
