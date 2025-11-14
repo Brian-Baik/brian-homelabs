@@ -1,93 +1,113 @@
 # Lab 9: Entra ID Cloud Users, Roles, and Groups
 
 ## Overview
-This lab sets up the basic cloud identity structure for the rest of the hybrid and Intune labs. I created cloud-only accounts, assigned directory roles, and built foundational security groups. These objects will be used for MFA, Intune enrollment, device management, Autopilot, Conditional Access, and the upcoming hybrid identity integration with on-prem Active Directory.
+This lab creates the initial cloud identity structure for the tenant. I added cloud-only users, assigned directory roles, and organized accounts into security groups. This prepares the environment for MFA, Intune device management, Autopilot enrollment, Conditional Access, and hybrid identity.
 
 ---
 
 ## Tasks Completed
 
 ### 1. Created cloud-only users
-I created the following accounts in Entra ID:
+I created the following accounts in Microsoft Entra ID:
 
-- Brian Baik (Global Admin)
-- John Admin (Privileged Role Administrator)
+- Brian Baik (Global Admin, Security Administrator)
+- BG Admin (Global Administrator, break glass account)
+- John Admin (Privileged Role Administrator, Hybrid Identity Administrator)
 - Helpdesk Tech
 - David User
 - Sarah User
 - Device Enrollment
 
-These accounts reflect a typical small organization: admins, helpdesk, standard employees, and a device enrollment identity for Intune and Autopilot.
+This forms a small but realistic identity layout that separates admin, helpdesk, and standard user roles.
+
+#### Screenshot 01: Entra Users List  
+Shows all cloud-only users created for this lab.  
+**File:** `01-entra-users-list.png`
+
+![01-entra-users-list](./screenshots/01-entra-users-list.png)
 
 ---
 
 ### 2. Assigned directory roles
-Roles were assigned according to least privilege:
+Roles were assigned to match realistic governance while still allowing full administrative functionality for homelab tasks.
 
 | User | Role |
 |------|------|
-| Brian Baik | Global Administrator |
-| John Admin | Privileged Role Administrator |
+| Brian Baik | Global Administrator, Security Administrator |
+| BG Admin | Global Administrator (break glass account) |
+| John Admin | Privileged Role Administrator, Hybrid Identity Administrator |
 | Helpdesk Tech | Helpdesk Administrator |
-| Device Enrollment | Standard user (will receive enrollment roles later) |
+| Device Enrollment | No role needed yet |
 | David and Sarah | Standard users |
 
-This establishes proper separation between full admins, helpdesk operators, and regular users.
+A dedicated break glass admin is included to follow proper privileged identity practices.
+
+#### Screenshot 02: Brian Baik Assigned Roles  
+Shows Global Administrator and Security Administrator assignments.  
+**File:** `02-entra-user-details-brian.png`
+
+![02-entra-user-details-brian](./screenshots/02-entra-user-details-brian.png)
+
+#### Screenshot 03: John Admin Assigned Roles  
+Shows Privileged Role Administrator and Hybrid Identity Administrator assignments.  
+**File:** `03-entra-john-assigned-roles.png`
+
+![03-entra-john-assigned-roles](./screenshots/03-entra-john-assigned-roles.png)
 
 ---
 
 ### 3. Created core security groups
-These groups match real identity architecture and will be used later for policy scoping, device management, and Conditional Access.
+These groups will be used later for Intune enrollment, Conditional Access, Autopilot, MFA enforcement, and device-based policy targeting.
 
 - **Cloud-Admins**  
   Members: Brian Baik, John Admin  
-  Description: Administrative group for Entra ID and cloud services. Used for high privilege accounts only.
+  Description: High privilege administrators for cloud services.
 
 - **Helpdesk-Techs**  
   Members: Helpdesk Tech  
-  Description: Helpdesk and support staff with delegated permissions for user support and basic administration.
+  Description: Delegated permissions for support and troubleshooting tasks.
 
 - **Standard-Users**  
   Members: David User, Sarah User  
-  Description: Regular user accounts for MFA testing, policy enforcement, and device enrollment scenarios.
+  Description: Regular non-admin accounts for policy testing and enrollment scenarios.
 
 - **Device-Enrollment-Admins**  
   Members: Device Enrollment  
-  Description: Used for Windows device enrollment, Autopilot testing, and Intune onboarding.
+  Description: Used for Intune and Windows Autopilot device enrollment.
+
+#### Screenshot 04: Entra Groups List  
+Shows all identity groups created for this lab.  
+**File:** `04-entra-groups-list.png`
+
+![04-entra-groups-list](./screenshots/04-entra-groups-list.png)
+
+#### Screenshot 05: Cloud-Admins Group Membership  
+Shows Brian and John in the Cloud-Admins group.  
+**File:** `05-entra-group-members-cloud-admins.png`
+
+![05-entra-group-members-cloud-admins](./screenshots/05-entra-group-members-cloud-admins.png)
 
 ---
 
-## Screenshots
-Screenshots for this lab are stored in the `/screenshots` folder.
+## Why This Lab Matters
 
-1. `01-entra-users-list`
-2. `02-entra-brian-assigned-roles`
-3. `03-entra-john-assigned-roles`
-4. `04-entra-groups-list`
-5. `05-entra-group-members-cloud-admins`
+This lab establishes the identity framework that the rest of the cloud and hybrid environment will rely on. Entra ID controls authentication and authorization for Intune, Autopilot, Conditional Access, and hybrid identity. A structured identity layer ensures that policies can be targeted safely and administrative boundaries remain secure.
+
+### Cloud-only users
+Cloud-only accounts let me test identity behavior before introducing directory synchronization. This matches how organizations stage their cloud environment before deploying hybrid join or Entra Connect.
+
+### Directory role assignments
+Even though I use Global Administrator rights for lab setup, the design includes role separation. Delegating Privileged Role Administrator, Hybrid Identity Administrator, and Helpdesk Administrator to specific accounts follows realistic identity governance and avoids relying solely on a single high privilege identity.
+
+### Security groups
+Groups provide the targeting layer for device and access policies. These groups will be used for Conditional Access enforcement, MFA rollout, Intune configuration, and Autopilot assignments. Separating identities into Cloud-Admins, Helpdesk-Techs, Standard-Users, and Device-Enrollment-Admins keeps the tenant structured and aligned with real enterprise practice.
+
+This lab provides the identity blueprint that all future cloud and hybrid configurations will build upon.
 
 ---
 
-## Lab Summary
-This lab created the cloud identity foundation for the rest of the project. With users, roles, and groups in place, the tenant is now ready for the next steps:
+## Next Lab
+With cloud identity in place, the next step is securing the tenant and preparing it for device management.
 
-- MFA and security defaults
-- Intune MDM setup
-- Autopilot preparation
-- Hybrid Azure AD Join
-- Directory synchronization with Entra Connect
-- Conditional Access testing
-
-This completes the cloud identity preparation for the hybrid environment.
-
-### Why role assignments matter
-Even though I use a Global Administrator account in this homelab, the role assignments in this lab mirror how identity is structured in real organizations. Production environments follow the principle of least privilege. Only dedicated admin accounts receive high-level roles, and day-to-day accounts use lower privilege permissions.
-
-Assigning specific directory roles in this lab demonstrates:
-
-- a realistic separation between full admin and helpdesk access  
-- delegated permissions for support tasks  
-- a structure that will be used later for Conditional Access testing  
-- proper organization of responsibilities across identities  
-
-This makes the lab environment behave like a real cloud tenant even though I am using a global admin account for setup and testing.
+**Next Lab:**  
+**Lab 10 – MFA and Security Defaults Setup**
