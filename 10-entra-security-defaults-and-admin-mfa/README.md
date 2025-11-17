@@ -111,8 +111,7 @@ This is industry best practice for disaster recovery.
 Disabling them is required for:
 - Conditional Access  
 - MFA policies  
-- Modern Zero Trust identity governance  
-- Custom SSPR and authentication methods
+- Other advanced tenant security configurations
 
 ---
 
