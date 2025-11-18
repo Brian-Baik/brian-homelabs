@@ -1,4 +1,6 @@
 # Lab 12 – Hybrid Identity with Microsoft Entra Connect Sync
+
+## Goal
 This lab demonstrates how to connect an on-premises Active Directory domain to Microsoft Entra ID using Entra Connect Sync. The goal is to enable hybrid identity and synchronize on-prem user accounts to the cloud.
 
 ---
