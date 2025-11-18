@@ -13,7 +13,6 @@ This lab demonstrates how to connect an on-premises Active Directory domain to M
 ---
 
 ## Screenshots
-(Replace filenames with your actual screenshot names.)
 
 1. Entra Connect Sync installation completed  
    `01-entra-connect-install-complete.png`
